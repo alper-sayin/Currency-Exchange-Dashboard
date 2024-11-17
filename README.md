@@ -36,7 +36,7 @@ A full-stack web application providing currency exchange rates, historical data 
 After fethching the files in repository or cloning the repository(`git clone (https://github.com/alper-sayin/Currency-Exchange-Dashboard.git)`) to desired folder, setting up virtual environment and satisfying the requirements([requirements.txt](requirements.txt)), [frontend/package.json](frontend/package.json), open the terminal in your IDE, you should apply:
 
 ### Backend Setup
-Run this all commands in project root directory
+Run all commands in project root directory
 -	`psql -U postgres`
 -	`CREATE DATABASE test_currency_exchange;`
 for database creation in your postgresql server
@@ -52,7 +52,8 @@ After all that our backend is ready for launch
 ### Frontend Setup
 - Open another terminal in frontend directory
 - `npm start` for running the server.
-- Server automatically will be launched on http://localhost:3000/ interacting with Django server(http://localhost:8000). 
+- Server automatically will be launched on http://localhost:3000 interacting with Django server(http://localhost:8000).
+  
 ***Both servers should run simultaneously
 
 
