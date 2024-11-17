@@ -37,22 +37,22 @@ After fethching the files in repository or cloning the repository(`git clone (ht
 
 ### Backend Setup
 Run this all commands in project root directory
-•	`psql -U postgres`
-•	`CREATE DATABASE test_currency_exchange;`
+-	`psql -U postgres`
+-	`CREATE DATABASE test_currency_exchange;`
 for database creation in your postgresql server
 Then,
-•	`python manage.py makemigrations`
-•	`python manage.py migrate`
+-	`python manage.py makemigrations`
+-	`python manage.py migrate`
 for database migrations.
-•	`python manage.py load_historical_dates`
+-	`python manage.py load_historical_dates`
 for seeding the database with currency exchange rates
 After all that our backend is ready for launch
-•	`python manage.py runserver`
+-	`python manage.py runserver`
 
 ### Frontend Setup
-• Open another terminal in frontend directory
-• `npm start` for running the server.
-• Server automatically will be launched on http://localhost:3000/ interacting with Django server(http://localhost:8000). 
+- Open another terminal in frontend directory
+- `npm start` for running the server.
+- Server automatically will be launched on http://localhost:3000/ interacting with Django server(http://localhost:8000). 
 ***Both servers should run simultaneously
 
 
