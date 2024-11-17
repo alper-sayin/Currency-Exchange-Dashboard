@@ -74,7 +74,7 @@ for seeding the database with currency exchange rates.
 
 ## Usage & Screenshots
 
-Current current exchange rates & trends according to previous rates
+Current currency exchange rates & trends according to previous rates
 ![Description](images/ced4.PNG)
 
 Reversing rates
