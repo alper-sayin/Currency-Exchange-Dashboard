@@ -31,6 +31,22 @@ A full-stack web application providing currency exchange rates, historical data 
 
 ## Project Structure
 
+```)|-- backend/
+|   |-- exchange/
+|   |   |-- models.py         # Database models
+|   |   |-- serializers.py    # API serializers
+|   |   |-- views.py          # API endpoints
+|   |   |-- urls.py           # API routing
+|-- frontend/
+    |-- src/
+    |   |-- components/
+    |   |   |-- CurrencyDashboard.js
+    |   |   |-- CurrencyCalculator.js
+    |   |   |-- HistoricalRates.js
+    |   |-- App.js
+|-- manage.py
+    ```)
+
 ## Installation & Setup
 
 After fethching the files in repository or cloning the repository(`git clone (https://github.com/alper-sayin/Currency-Exchange-Dashboard.git)`) to desired folder, setting up virtual environment and satisfying the requirements([requirements.txt](requirements.txt)), [frontend/package.json](frontend/package.json), open the terminal in your IDE, you should apply:
