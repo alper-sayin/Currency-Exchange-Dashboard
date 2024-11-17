@@ -9,7 +9,7 @@
 
 ## Introduction
 
-A full-stack web application providing currency exchange rates, historical data visualization, and currency conversion capabilities. Built with Django REST Framework and React.
+A full-stack web application providing currency exchange rates, historical data visualization, and currency calculator. Built with Django REST Framework and React.
 
 ## Key Features
 - Currency Exchange Rates: Interactive dashboard displaying current rates with trend indicators
