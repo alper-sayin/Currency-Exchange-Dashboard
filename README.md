@@ -30,8 +30,8 @@ A full-stack web application providing currency exchange rates, historical data 
 
 
 ## Project Structure
-
-```)|-- backend/
+```
+|-- backend/
 |   |-- exchange/
 |   |   |-- models.py         # Database models
 |   |   |-- serializers.py    # API serializers
@@ -45,7 +45,7 @@ A full-stack web application providing currency exchange rates, historical data 
     |   |   |-- HistoricalRates.js
     |   |-- App.js
 |-- manage.py
-    ```)
+```
 
 ## Installation & Setup
 
