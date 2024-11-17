@@ -1,0 +1,85 @@
+.calculator-container {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 25px;
+  border: solid royalblue;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.currency-selectors {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.currency-select {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.currency-select:hover {
+  border-color: #0066cc;
+}
+
+.amount-input {
+  width: 100%;
+  padding: 6px;
+  border: 3px solid #e0e0e0;
+  border-radius: 3px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: border-color 0.5s;
+}
+
+.amount-input:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+}
+
+.result-container {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+}
+
+.result-value {
+  font-weight: 600;
+  color: #0066cc;
+}
+
+.currency-code {
+  color: #666;
+  font-weight: 500;
+}
+
+.swap-button {
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 18px;
+}
+
+.swap-button:hover {
+  background-color: #e9ecef;
+  border-color: #0066cc;
+  color: #0066cc;
+}
+
+.swap-button:active {
+  transform: scale(0.95);
+}

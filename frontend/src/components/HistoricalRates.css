@@ -1,0 +1,105 @@
+.historical-rates-container {
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.currency-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.currency-select,
+.period-select {
+  padding: 10px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  min-width: 100px;
+  transition: all 0.2s;
+}
+
+.currency-select:hover,
+.period-select:hover {
+  border-color: #0066cc;
+}
+
+.swap-button {
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 18px;
+}
+
+.swap-button:hover {
+  background-color: #f8f9fa;
+  border-color: #0066cc;
+  color: #0066cc;
+}
+
+.swap-button:active {
+  transform: scale(0.95);
+}
+
+.chart-container {
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 2px 4px 8px rgba(0.4, 0.4, 0.4, 0.4);
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.custom-tooltip {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip-date {
+  color: #666;
+  margin: 0 0 8px 0;
+  font-size: 14px;
+}
+
+.tooltip-rate {
+  color: #333;
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .currency-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .period-control {
+    width: 100%;
+  }
+
+  .period-select {
+    width: 100%;
+  }
+}
