@@ -40,13 +40,13 @@ Run all commands in project root directory
 -	`psql -U postgres`
 -	`CREATE DATABASE test_currency_exchange;`
 for database creation in your postgresql server
-Then,
--	`python manage.py makemigrations`
+
+- Then	`python manage.py makemigrations`
 -	`python manage.py migrate`
 for database migrations.
 -	`python manage.py load_historical_dates`
-for seeding the database with currency exchange rates
-After all that our backend is ready for launch
+for seeding the database with currency exchange rates.
+  After all that our backend is ready for launch
 -	`python manage.py runserver`
 
 ### Frontend Setup
@@ -56,9 +56,33 @@ After all that our backend is ready for launch
   
 ***Both servers should run simultaneously
 
-
 ## Usage & Screenshots
 
+Current current exchange rates & trends according to previous rates
+![Description](images/ced4.PNG)
+
+Reversing rates
+![Description](images/ced1.PNG)
+
+![Description](images/ced2.PNG)
+
+Changing base currencies
+![Description](images/ced3.PNG)
+
+Navigating to historical rates via clicking the particular currency exchange rate
+![Description](images/his1.PNG)
+10-year rates chart
+![Description](images/his2.PNG)
+5-year rates chart
+![Description](images/his3.PNG)
+1-year rates chart
+![Description](images/his4.PNG)
+1-week rates chart
+![Description](images/his5.PNG)
+Currency exchange calculator
+![Description](images/cal1.PNG)
+Swapping currencies 
+![Description](images/cal2.PNG)
 
 
 
