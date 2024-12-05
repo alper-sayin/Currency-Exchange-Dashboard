@@ -1,0 +1,36 @@
+services:
+  web:
+    environment:
+      - DB_HOST=db
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/usr/src/app
+
+  db:
+    image: postgres
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: test_currency_exchange
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
