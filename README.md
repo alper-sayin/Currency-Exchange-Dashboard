@@ -49,7 +49,7 @@ A full-stack web application providing currency exchange rates, historical data 
 
 ## Installation & Setup
 
-After fetching the files in repository or cloning the repository(`git clone (https://github.com/alper-sayin/Currency-Exchange-Dashboard.git)`) to desired folder, setting up virtual environment and satisfying the requirements([requirements.txt](requirements.txt)), [frontend/package.json](frontend/package.json), open the terminal in your IDE, you should apply:
+After fetching the files in repository or cloning the repository(`git clone (https://github.com/alper-sayin/Currency-Exchange-Dashboard.git)`) to desired folder, setting up virtual environment and satisfying the requirements([backend/requirements.txt](requirements.txt), [frontend/package.json](package.json)), open the terminal in your IDE, you should apply:
 
 ### Backend Setup
 Run all commands in project root directory
