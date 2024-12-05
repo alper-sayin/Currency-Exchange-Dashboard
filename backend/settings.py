@@ -102,7 +102,7 @@ DATABASES = {
         'NAME': 'test_currency_exchange',
         'USER': 'postgres',          
         'PASSWORD': os.getenv('DB_PASSWORD'), 
-        'HOST': 'localhost',
+        'HOST': os.getenv('DB_HOST', 'localhost'), 
         'PORT': '5432',
 
     }
