@@ -5,6 +5,8 @@ from decimal import Decimal
 from .serializers import CurrencySerializer, ExchangeRateSerializer, HistoricalRateSerializer
 from .models import Currency, ExchangeRate
 from datetime import timedelta
+from django_redis import get_redis_connection
+import json
 
 class CurrencyViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Currency.objects.filter(is_active=True)
@@ -27,17 +29,41 @@ class ExchangeRateViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['get'])
     def latest(self, request):
+
+        redis_conn = get_redis_connection("default")
+        base = request.query_params.get('base', 'USD')
+        cache_key = f"latest_rates_{base}"
+        cached_data = redis_conn.get(cache_key)
+        
+        if cached_data:
+            return Response(json.loads(cached_data))
+
         latest_rate = self.get_queryset().latest('date')
         serializer = self.get_serializer(latest_rate, context={'request': request})
-        return Response(serializer.data)
+        data =serializer.data
+        redis_conn.setex(cache_key, 3600, json.dumps(data))
+        return Response(data)
     
     @action(detail=False, methods=['get'])
     def previous(self, request):
+
+        redis_conn = get_redis_connection("default")
+        base = request.query_params.get('base', 'USD')
+        cache_key = f"previous_rates_{base}"
+        cached_data = redis_conn.get(cache_key)
+
+
+        if cached_data:
+         return Response(json.loads(cached_data))
+
+         
         latest = self.get_queryset().latest('date')
         previous = self.get_queryset().filter(date__lt=latest.date).latest('date')
         
         serializer = self.get_serializer(previous, context={'request': request})
-        return Response(serializer.data)
+        data =serializer.data
+        redis_conn.setex(cache_key, 3600, json.dumps(data))
+        return Response(data)
     
 
     @action(detail=False, methods=['get'])
