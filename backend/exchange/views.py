@@ -71,6 +71,13 @@ class ExchangeRateViewSet(viewsets.ModelViewSet):
         from_currency = request.query_params.get('from', 'USD')
         to_currency = request.query_params.get('to', 'EUR')
         period = request.query_params.get('period', '1w')
+
+        redis_conn = get_redis_connection("default")
+        cache_key = f"historical_rates_{from_currency}_{to_currency}_{period}"
+
+        cached_data = redis_conn.get(cache_key)
+        if cached_data:
+         return Response(json.loads(cached_data))
         
         periods = {
             '1w': 7,
@@ -94,12 +101,22 @@ class ExchangeRateViewSet(viewsets.ModelViewSet):
             context={'request': request}
         )
 
-        return Response({
-            'from': from_currency,
-            'to': to_currency,
-            'period': period,
-            'data': serializer.data
-        })
+        response_data = {
+        'from': from_currency,
+        'to': to_currency,
+        'period': period,
+        'data': serializer.data
+        }
+
+        serialized_data = json.dumps(response_data, default=str)
+
+        redis_conn.setex(
+        cache_key, 
+        3600, 
+        serialized_data
+    )
+        
+        return Response(response_data)
     
     @action(detail=False, methods=['get'])
     def convert(self, request):
