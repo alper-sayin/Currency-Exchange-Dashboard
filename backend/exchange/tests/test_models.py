@@ -1,6 +1,17 @@
 import pytest
 from exchange.models import Currency, ExchangeRate
 from datetime import date, timedelta
+from unittest.mock import Mock, patch
+
+@pytest.fixture(autouse=True)
+def mock_redis():
+    with patch('django_redis.get_redis_connection') as mock_conn:
+        # Create a mock Redis client with basic functionality
+        mock_client = Mock()
+        mock_client.get.return_value = None
+        mock_client.set.return_value = True
+        mock_conn.return_value = mock_client
+        yield mock_client
 
 @pytest.mark.django_db
 class TestCurrencyModel:
@@ -84,6 +95,7 @@ class TestExchangeRateModel:
 
 @pytest.mark.django_db
 class TestExchangeRateViewSet:
+
     @pytest.fixture
     def sample_rates(self):
         return {
