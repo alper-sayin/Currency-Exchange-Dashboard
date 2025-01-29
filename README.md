@@ -76,12 +76,7 @@ for seeding the database with currency exchange rates.
 For launching project without any dependencies above, Docker Desktop can be used.
 
 In the project root directory, open the terminal;
-- `docker compose up`;for creating images and containers
--  `docker compose exec web python manage.py makemigrations exchange`
--  `docker compose exec web python manage.py migrate`
-  for database migrations.
-- `docker compose exec web python manage.py load_historical_dates`
-for seeding the database with currency exchange rates.
+- `docker compose up`;
 
 Then; server can be accessed via http://localhost:3000
 
