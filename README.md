@@ -67,6 +67,7 @@ for database migrations.
 for seeding the database with currency exchange rates.
   After all that our backend is ready for launch
 -	`python manage.py runserver`
+
 For starting Redis server:
 In WSL Ubuntu Terminal;
 -	`sudo service redis-server start`
