@@ -5,7 +5,8 @@
 3. [Technologies Used](#technologies-used)
 4. [Project Structure](#project-structure)
 5. [Installation & Setup](#installation--setup)
-6. [Usage & Screenshots](#usage--screenshots)
+6. [Workflows](#workflows)
+7. [Usage & Screenshots](#usage--screenshots)
 
 ## Introduction
 
@@ -22,6 +23,8 @@ A full-stack web application providing currency exchange rates, historical data 
 ### Backend
 - Django & Django REST Framework
 - PostgreSQL Database
+- Redis
+- Docker
 
 ### Frontend
 - React.js
@@ -64,6 +67,10 @@ for database migrations.
 for seeding the database with currency exchange rates.
   After all that our backend is ready for launch
 -	`python manage.py runserver`
+For starting Redis server:
+In WSL Ubuntu Terminal;
+-	`sudo service redis-server start`
+-	`redis-cli`
 
 ### Frontend Setup
 - Open another terminal in frontend directory
@@ -79,6 +86,17 @@ In the project root directory, open the terminal;
 - `docker compose up`
 
 Then; server can be accessed via http://localhost:3000
+
+## Workflows
+
+### CI Pipeline 
+Workflow designed to automatically execute backend and/or frontend unit tests based on file changes in respective directories.
+
+### Redis Performance Test
+Automated workflow to measure API performance improvements: 
+- Benchmarks response times with and without Redis caching 
+- Tests multiple endpoints under different load conditions
+- Generates performance comparison metrics
 
 ## Usage & Screenshots
 
